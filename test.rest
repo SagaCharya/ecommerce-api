@@ -1,0 +1,119 @@
+### user register
+POST http://localhost:3000/user/register 
+content-type: application/json
+
+{
+    "username" : "test",
+    "email" : "sagar@gmail.com",
+    "password" : "123456789",
+    "contact" : 9800000000,
+    "role": ""
+}
+
+### user login
+POST http://localhost:3000/user/login 
+content-type: application/json
+
+{
+    "email" : "test@gmail.com",
+    "password" : "123456789" 
+}
+
+###product page all
+GET http://localhost:3000/product
+
+### search for product
+GET http://localhost:3000/product/search?name=shoes
+
+
+###Product upload
+POST http://localhost:3000/product
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+chappal
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="detail"
+
+It is a kurtha
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price"
+
+1000
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="discount"
+
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename=""
+Content-Type: image/jpeg
+
+@C:\path\to\your\image.jpg  <!-- Specify the correct image file path -->
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###file Update
+PUT http://localhost:3000/product/6746025510358e60858e09bf
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+Kurtha
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="detail"
+
+It is a kurtha
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price"
+
+100
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="discount"
+
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename=""
+Content-Type: image/jpeg
+
+@C:\path\to\your\image.jpg  <!-- Specify the correct image file path -->
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Product Delete
+DELETE http://localhost:3000/product/674600ef50d14458d7eebfbc
+Content-Type: multipart/form-data
+
+
+### Adding product to the cart
+POST http://localhost:3000/user/cart
+Content-Type: application/json
+
+{
+    "product_id": "674600d950d14458d7eebfb9"
+}
+
+
+### reading from cart
+GET http://localhost:3000/user/cart
+
+### Delete from cart
+DELETE  http://localhost:3000/user/cart/674600ef50d14458d7eebfbc
+Content-Type: application/json
+
+
+
+### payment test
+POST http://localhost:3000/user/create-payment HTTP/1.1
+Content-Type: application/json
+
+{
+  "products": [
+    { "product_id": "674600d950d14458d7eebfb9", "quantity": 2 },
+    { "product_id": "674749bfa56914a68abf0393", "quantity": 1 }
+  ],
+  "currency": "usd"
+}

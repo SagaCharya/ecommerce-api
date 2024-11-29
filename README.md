@@ -5,9 +5,10 @@ This is a RESTful API for an eCommerce application that allows users to register
 
 - User registration and login
 - Product management (create, read, update, delete)
-- Shopping cart functionality (add, remove items)
+- Shopping cart functionality (add, remove items, read)
 - Checkout process with payment processing using Stripe
 - JWT authentication for secure endpoints
+- Rest Client to test all the endpoints.
 
 
 ## Technologies Used
@@ -21,3 +22,6 @@ This is a RESTful API for an eCommerce application that allows users to register
 - **Stripe**: Payment processing platform.
 - **Nodemon**: For auto-restarting the server during development.
 - **Multer**: For file handling(images).
+
+# Note
+- Used Rest Client by Huachao Mao (VS code Extension) to test all the apis and test file(test.rest) is avaibible.
